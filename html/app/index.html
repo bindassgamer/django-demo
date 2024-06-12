@@ -1,0 +1,282 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+  <title>eExpense</title>
+
+  <!-- SEO SETTINGS (mrprayag) -->
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="en">
+  <meta name="revisit-after" content="7 days">
+  <meta name="distribution" content="global">
+  <meta name="geo.region" content="india">
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+
+  <!-- Favicons -->
+  <link href="/static/img/bggg1.jpg" rel="icon" />
+  <link href="/static/img/Light Blue.webp" rel="apple-touch-icon" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800|Montserrat:300,400,700"
+    rel="stylesheet" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap" rel="stylesheet">
+
+  <!-- CSS CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="static/bootstrap/bootstrap.min.css">
+
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+    integrity="sha512-Oy+sz5W86PK0ZIkawrG0iv7XwWhYecM3exvUtMKNJMekGFJtVAhibhRPTpmyTj8+lJCkmWfnpxKgT2OopquBHA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.1/css/boxicons.min.css"
+    integrity="sha512-nOk7sj5T6Zi3Ond5VHhc+L4WHvRuRhV/cOcWWDl2mOyTetiIfuv56UJzD0yYhz9Kqwk1PpU0/PX5+qpX43hVWg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.css"
+    integrity="sha512-+S5HQ2Ix/L84uhBLMimQiJlFjqR/Unnord77MEDNpWtK99i2Tk212EPb3/ahEjgaPRBKkKtTzMHIdO2HQXT3dQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- CSS  -->
+  <link href="/static/css/style.css" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/darkmode.css" />
+  <link href="/static/css/enquiry-form.css" rel="stylesheet" />
+
+  <!-- Footer icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    #preloader {
+      background: white url("/static/img/Rhombus.gif") no-repeat center center;
+      background-size: 10%;
+      height: 100vh;
+      width: 100%;
+      position: fixed;
+      z-index: 999999;
+    }
+  </style>
+
+</head>
+
+<body onload="myFunction()">
+  <div id="preloader"></div>
+ <!-- ======= Header ======= -->
+ <header id="header" class="d-flex align-items-center">
+  <div class="container d-flex align-items-center justify-content-between">
+    {% comment %} <div id="logo">
+      <a href="index.html"><img src="/static/img/bggg1.jpg" alt="CodeSetGo Logo" height="50px"
+          width="270px" /></a>
+    </div> {% endcomment %}
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="index.html"><img src="/static/img/bggg1.jpg" alt="CodeSetGo Logo" height="50px"
+          width="270px" /></a></li>
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li><a class="nav-link scrollto" href='{% url "login" %}'>Login</a></li>
+        
+
+        <li class="darkmode"></li>
+      </ul>
+
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+  </div>
+</header>
+<!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h2>eExpense</h2>
+    </div>
+    <div class="hero-slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" style=>
+          <video autoplay loop muted plays-inline>
+            <source src="/static/video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section -->
+
+ 
+
+  <!-- ======= Main Section ======= -->
+  <main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-lg-6 about-img">
+            <img src="/static/img/About us.webp" alt="About Us image" />
+          </div>
+          <div class="col-lg-6 content">
+            <h2>About Us</h2>
+            <h3>
+              <strong>eExpense</strong>An expense tracker website is a tool designed to help individuals or businesses monitor and manage their spending. It typically includes features for recording expenses, categorizing them, setting budgets, and generating reports!<br />
+        
+              
+            </h3>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+
+  </main>
+  <!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <!-- <footer id="footer">
+      <div class="container">
+        <div class="copyright text-center">
+          Made with <i class="bi bi-heart-fill" style="color: red"></i> by
+          <strong style="color: #2796ff">CodeSetGo Team</strong>
+        </div>
+      </div>
+    </footer> -->
+  <!-- End Footer -->
+
+  <!-- New Footer Starts -->
+  <!-- <div class="section"><h3>Reach <span>US</span></h3> -->
+    <section id="services">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2>Scheme Section</h2>
+          <p>
+        Following are few schemes beneficiary for students
+          </p>
+        </div>
+        <div>
+          <h3 class="title">Tuition Fees and Examination Fees to OBC Students</h3>
+          <li> <a href="https://mahadbt.maharashtra.gov.in/SchemeData/SchemeData?str=E9DDFA703C38E51A2D3C3A162F4DE21D"> Benefit:-Tuition Fees and Exam Fees reimbursed to the concern Applicant vide Govt. Resolution dated 12/3/2007, since 2006-07 the Applicants who are admitted in professional courses through CAP round in the Govt., Govt. approved private non-aided and permanently non granted colleges are applicable to pay 50 % Tuition Fees & Exam Fees approved by Education Fee Committee.</a></li>
+          <h3 class="title">Social justice and Special assistance</h3>
+          <li><a href="https://mahadbt.maharashtra.gov.in/SchemeData/SchemeData?str=E9DDFA703C38E51A2D3C3A162F4DE21D"> Benefits:- Tution fees, Exam fees and other fees which are mandatory and compulsorily payable by the student to the institution are covered under the scheme</a></li>
+          <h3 class="title">Open Merit Scholarships in Junior College</h3> 
+          <li> <a href="https://mahadbt.maharashtra.gov.in/SchemeData/SchemeData?str=E9DDFA703C38E51A2D3C3A162F4DE21D"> Benefits:-For students in class 11th and 12th: INR 50 per month for ten months (Rs. 500 per Year).</a></li>
+          <h3 class="title">Rajarshri Chhatrapati Shahu Maharaj Fee Reimbursement Scheme.</h3>     
+          <li> <a href="https://mahadbt.maharashtra.gov.in/SchemeData/SchemeData?str=E9DDFA703C38E51A2D3C3A162F4DE21D"> Benefits:-50% fee reimbursement (tuition fee + development fee) will be provided for medical students.</a></li>
+        </div>
+    </section>
+
+  <footer id="footer" class="footer-section">
+    <div class="footer-content">
+      <div class="top-footer-text">
+        
+      </div>
+      <ul class="list-footer">
+        <li><a href="#about">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="wrapper">
+     
+     
+     
+    <hr>
+
+    <div>
+      <div class="footer-copyright">
+        <h4>Made with ❤ by eExpense Team</h4>
+      </div>
+    </div>
+    </div>
+    <div class="alan-btn"></div>
+
+  </footer>
+
+  <!-- New Footer Ends -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
+      class="bi bi-arrow-up-short"></i></a>
+
+  <!-- JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="/static/bootstrap/bootstrap.bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+    integrity="sha512-Zq2BOxyhvnRFXu0+WE6ojpZLOU2jdnqbrM1hmVdGzyeCa1DgM3X5Q4A/Is9xA1IkbUeDd7755dNNI/PzSf2Pew=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.0.6/swiper-bundle.min.js"
+    integrity="sha512-4w/aaXboO6KY1E/dqYwfq09sZnM+XDIcWvmHhfxvMQ+qwK84kxgWtNkAqbFNMLYd6EYA3nSgxTSyif/D3vlVMg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script src="/static/js/email.min.js"></script>
+
+  <!-- JS -->
+  <script defer src="/static/js/darkmode_logic.js"></script>
+  <script type="text/javascript"
+ src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+  <script src="/static/js/main.js"></script>
+  <script>
+
+    var loader = document.getElementById("preloader");
+
+    function myFunction() {
+      preloader.style.display = "none";
+    }
+  </script>
+
+
+
+  <!-- SEO SETTINGS -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://codesetgo.netlify.app/",
+    "@type": "WebSite",
+    "name": "codesetgo",
+    "description": "CodeSetGo is a community made for the students and made by the students. Here you get free coding resources, online webinars, doubt support and guidance from the brilliant minds across the globe. It's a place for Tech Enthusiasts to learn the latest technology in the comfort and convenience of their homes!",
+    "url": "https://codesetgo.netlify.app/",
+    "image": "https://codesetgo.netlify.app/static/img/Banner%20-%20Light.webp,
+    "author": {
+      "@type": "Person",
+      "name": "agamjotsingh18"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "codesetgo",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://codesetgo.netlify.app/static/img/Banner%20-%20Light.webp"
+      }
+    },
+    "datePublished": "2023-06-08"
+  }
+  </script>
+
+  
+</body>
+
+</html>

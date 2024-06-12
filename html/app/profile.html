@@ -1,0 +1,151 @@
+{% comment %} {% extends "blog/base.html" %}
+{% load crispy_forms_tags %} {% endcomment %}
+{% comment %} {% block content %}
+    <div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ user.profile.image.url }}" height="40px" width="40px">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secondary">{{ user.email }}</p>
+        </div>
+      </div>
+      <!-- FORM HERE -->
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4">Join Today</legend>
+            {{ u_form }}
+            {{ p_form }}
+        </fieldset>
+        <div class="form-group">
+            <button class="btn btn-outline-info" type="submit">Sign Up</button>
+        </div>
+    </form>
+    </div>
+{% endblock content %} {% endcomment %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <style>
+    .profile {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: grey;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-details {
+  flex-grow: 1;
+}
+
+.profile-name {
+  font-size: 24px;
+  margin: 0;
+}
+
+.profile-location {
+  margin: 5px 0;
+  color: #666;
+}
+
+.profile-description {
+  margin: 10px 0;
+}
+
+.contact-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-button:hover {
+  background-color: #0056b3;
+}
+
+.profile-skills h2,
+.profile-portfolio h2 {
+  margin-top: 20px;
+  color: #333;
+}
+
+.profile-portfolio .portfolio-item {
+  margin-bottom: 20px;
+}
+
+.profile-portfolio .portfolio-item img {
+  max-width: 100%;
+  border-radius: 5px;
+}
+/* Add responsiveness */
+@media screen and (max-width: 600px) {
+  .profile-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+  }
+}
+
+/* Add animation */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideInFromLeft 0.5s ease-in-out forwards;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="profile">
+    <div class="profile">
+        <div class="profile-header">
+          <img src="{{ user.profile.image.url }}" alt="Profile Picture" class="profile-picture"/>
+          <div class="profile">
+            <img src="{{ user.profile.image.url }}" alt="Profile Picture">
+            <p>Location: {{ user.profile.location }}</p>
+            <p>Contact: {{ user.profile.contact }}</p>
+            <p>Skills: {{ user.profile.skills_self }}</p>
+            <p>Bio: {{ user.profile.bio }}</p>
+            <p>Credits: {{ user.profile.credits }}</p>
+            <p>Amount: {{ user.profile.amount }}</p>
+            <p>LinkedIn: <a href="{{ user.profile.linkedin_url }}">{{user.profile.linkedin_url }}</a></p>
+            <p>Github: <a href="{{ user.profile.github_url }}">{{ user.profile.github_url }}</a></p>
+            <!-- Add more details here as needed -->
+        </div>
+      <script src="/static/js/profile_script.js"></script>
+    </body>
+</html>

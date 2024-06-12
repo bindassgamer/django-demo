@@ -1,0 +1,118 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" /> 
+    <link rel="stylesheet"href="/static/css/styledemo.css" /> 
+    <title>eExpense</title> 
+</head> 
+<!--open new link in different tab then <a href="www.google.com" target="_blank">google</a>-->
+<body background="/static/img/img2.jpg"> 
+    <div class="flex-container">
+    <div id="nav-logo"> <a href='{% url "main" %}'><img class="logo" src="/static/img/img1.jpg" alt="logo"></a></div>
+    <div id="nav-title"> <span class="text" >eExpense</span></div> 
+    </div> 
+    <!-- <div class="summary"> 
+        <div> 
+            <h1>✔ Balance: 
+                <span id="updatedBal"> 
+                      {{Total}}
+                  </span> 
+            </h1> 
+        </div> 
+        <br /> 
+        <div class="total"> 
+            <div>  
+                Total Income: 
+                <div> 
+                    <h2 style="color: green;"
+                        id="updatedInc"> 
+                        {{Income}}
+                    </h2> 
+                </div> 
+            </div> 
+            <hr class="verticle" /> 
+            <div> 
+                Total Expenses: 
+                <div> 
+                    <h2 style="color: red;" 
+                        id="updatedExp"> 
+                        {{Expense}}
+                    </h2> 
+                </div> 
+            </div> 
+        </div> 
+    </div>  -->
+    <div class="root"> 
+        <div id="items"> 
+            <h2>Details</h2> 
+            <table id="table"> 
+                <tr class="titles"> 
+                    <th>S.no.</th> 
+                    <th>Name</th> 
+                    <th>Category</th>
+                    <th>Date(Y-M-D)</th>
+                    <th>Amount</th> 
+                    <th>Type</th> 
+                    {% for n in ExpData %}
+                    <tr class="titles"> 
+                        <th>{{n.id}}</th> 
+                        <th>{{n.name}}</th> 
+                        <th>{{n.category}}</th>
+                        <th>{{n.date}}</th>
+                        <th>{{n.amount}}</th> 
+                        <th>{{n.type}}</th> 
+                    {% endfor %}
+                    <!-- {% for n in data %} -->
+                
+                    <!-- {% endfor %} -->
+            </table> 
+        </div> 
+        <hr class="vertical" /> 
+        <div id="new"> 
+            <h2>Add new</h2> 
+            <form method="post" action="{% url 'main' %}">
+                {% csrf_token %}
+                <div class="inputs" > 
+                    <!-- <div  class="inputitem"> 
+                        <p style="width: 9rem"> 
+                            Entry type: 
+                        </p> 
+                        <select type="number" name="select" id='itemType'> 
+                            <option value="1">Income</option>
+                            <option value="0">Expense</option>  
+                        </select> 
+                    </div>  -->
+                    <div class="inputitem"> 
+                        <p style="width: 9rem">Name:</p> 
+                        <input id="name" type="text" name="name" placeholder="name" /> 
+                    </div> 
+                    <div class="inputitem"> 
+                        <p style="width: 9rem">Category:</p> 
+                        <input id="category" type="text" name="category" placeholder="category" /> 
+                    </div>
+                    <div class="inputitem"> 
+                        <p style="width: 9rem">Date:</p> 
+                        <input id="Date"  type="date" name="date" placeholder="date" /> 
+                    </div>
+                    <div class="inputitem"> 
+                        <p style="width: 9rem">Amount:</p> 
+                        <input value="0" id="amount" name="amount" type="number" placeholder="amount" /> 
+                    </div> 
+                    <div class="inputitem"> 
+                        <p style="width: 9rem">Type:</p> 
+                        <select type="number" name="select" id='itemType'> 
+                            <option value="1">Income</option>
+                            <option value="0">Expense</option>  
+                        </select> 
+                    </div>
+                </div> 
+                    <button type="submit">ADD</button>
+            </form>
+            
+        </div> 
+    </div> 
+    <script src="/static/js/scriptdemo.js"></script> 
+</body> 
+  
+</html>
